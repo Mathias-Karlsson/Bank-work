@@ -32,7 +32,7 @@
             this.deposit = new System.Windows.Forms.Button();
             this.withdraw = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxBelopp = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,14 +42,14 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.register = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
-            this.accountList = new System.Windows.Forms.TextBox();
+            this.lbxKonton = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbxBelopp);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.withdraw);
             this.groupBox1.Controls.Add(this.deposit);
@@ -89,12 +89,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Belopp";
             // 
-            // textBox1
+            // tbxBelopp
             // 
-            this.textBox1.Location = new System.Drawing.Point(52, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 3;
+            this.tbxBelopp.Location = new System.Drawing.Point(52, 30);
+            this.tbxBelopp.Name = "tbxBelopp";
+            this.tbxBelopp.Size = new System.Drawing.Size(167, 20);
+            this.tbxBelopp.TabIndex = 3;
             // 
             // groupBox2
             // 
@@ -178,21 +178,20 @@
             this.update.Text = "Uppdatera med årsränta";
             this.update.UseVisualStyleBackColor = true;
             // 
-            // accountList
+            // lbxKonton
             // 
-            this.accountList.Location = new System.Drawing.Point(490, 22);
-            this.accountList.Multiline = true;
-            this.accountList.Name = "accountList";
-            this.accountList.Size = new System.Drawing.Size(237, 194);
-            this.accountList.TabIndex = 7;
-            this.accountList.TextChanged += new System.EventHandler(this.accountList_TextChanged);
+            this.lbxKonton.FormattingEnabled = true;
+            this.lbxKonton.Location = new System.Drawing.Point(490, 16);
+            this.lbxKonton.Name = "lbxKonton";
+            this.lbxKonton.Size = new System.Drawing.Size(237, 199);
+            this.lbxKonton.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 271);
-            this.Controls.Add(this.accountList);
+            this.Controls.Add(this.lbxKonton);
             this.Controls.Add(this.update);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -203,14 +202,13 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxBelopp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button withdraw;
         private System.Windows.Forms.Button deposit;
@@ -223,7 +221,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button update;
-        private System.Windows.Forms.TextBox accountList;
+        private System.Windows.Forms.ListBox lbxKonton;
     }
 }
 
