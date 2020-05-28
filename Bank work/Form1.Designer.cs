@@ -42,7 +42,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.register = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.accountList = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +68,7 @@
             this.deposit.TabIndex = 0;
             this.deposit.Text = "Insättning";
             this.deposit.UseVisualStyleBackColor = true;
+            this.deposit.Click += new System.EventHandler(this.deposit_Click);
             // 
             // withdraw
             // 
@@ -77,6 +78,7 @@
             this.withdraw.TabIndex = 1;
             this.withdraw.Text = "Uttag";
             this.withdraw.UseVisualStyleBackColor = true;
+            this.withdraw.Click += new System.EventHandler(this.withdraw_Click);
             // 
             // label1
             // 
@@ -176,20 +178,21 @@
             this.update.Text = "Uppdatera med årsränta";
             this.update.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // accountList
             // 
-            this.textBox5.Location = new System.Drawing.Point(490, 22);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(237, 194);
-            this.textBox5.TabIndex = 7;
+            this.accountList.Location = new System.Drawing.Point(490, 22);
+            this.accountList.Multiline = true;
+            this.accountList.Name = "accountList";
+            this.accountList.Size = new System.Drawing.Size(237, 194);
+            this.accountList.TabIndex = 7;
+            this.accountList.TextChanged += new System.EventHandler(this.accountList_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 271);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.accountList);
             this.Controls.Add(this.update);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -220,7 +223,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button update;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox accountList;
     }
 }
 

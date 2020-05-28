@@ -16,5 +16,20 @@ namespace Bank_work
         {
             InitializeComponent();
         }
+
+        private void deposit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void withdraw_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accountList_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
