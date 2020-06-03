@@ -42,12 +42,59 @@ namespace Bank_work
 
         private void withdraw_Click(object sender, EventArgs e)
         {
-
+            if (lbxKonton.SelectedItem != null)
+            {
+                double belopp;
+                if (! double.TryParse(tbxBelopp.Text, out belopp))
+                {
+                    MessageBox.Show("Felaktigt belopp", Text);
+                    return;
+                }
+                if ((lbxKonton.SelectedItem as BankKonto).Uttag(belopp) == false)
+                    MessageBox.Show("Medges ej", Text);
+                else UppdateraKontoLista();
+            }
         }
 
         private void accountList_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void register_Click(object sender, EventArgs e)
+        {
+            double ränteSats;
+            if (! double.TryParse(tbxRänta.Text, out ränteSats))
+            {
+                MessageBox.Show("Felaktigt räntesats", Text);
+                return;
+            }
+
+            double kredit;
+            if (! double.TryParse(tbxKredit.Text, out kredit))
+            {
+                MessageBox.Show("Felaktigt kredit", Text);
+                return;
+            }
+
+            BankKonto nyttKonto;
+            if (kredit == 0) nyttKonto = new SparKonto(tbxPersonNr.Text, ränteSats);
+            else nyttKonto = new LåneKonto(tbxPersonNr.Text, ränteSats, kredit);
+
+            bank.Konton.Add(nyttKonto);
+            lbxKonton.Items.Add(nyttKonto);
+
+            foreach (Control kontroll in gbxÖppnaKonto.Controls)
+                if (kontroll is TextBox) (kontroll as TextBox).Clear();
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            foreach (BankKonto konto in bank.Konton)
+            {
+                konto.BeräknaRänta();
+            }
+            UppdateraKontoLista();
         }
     }
 }

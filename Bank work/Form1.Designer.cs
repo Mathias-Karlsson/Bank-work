@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.deposit = new System.Windows.Forms.Button();
-            this.withdraw = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.tbxBelopp = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.withdraw = new System.Windows.Forms.Button();
+            this.deposit = new System.Windows.Forms.Button();
+            this.gbxÖppnaKonto = new System.Windows.Forms.GroupBox();
             this.register = new System.Windows.Forms.Button();
+            this.tbxKredit = new System.Windows.Forms.TextBox();
+            this.tbxRänta = new System.Windows.Forms.TextBox();
+            this.tbxPersonNr = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.update = new System.Windows.Forms.Button();
             this.lbxKonton = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbxÖppnaKonto.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -60,15 +60,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Insättning/Uttag";
             // 
-            // deposit
+            // tbxBelopp
             // 
-            this.deposit.Location = new System.Drawing.Point(144, 181);
-            this.deposit.Name = "deposit";
-            this.deposit.Size = new System.Drawing.Size(75, 23);
-            this.deposit.TabIndex = 0;
-            this.deposit.Text = "Insättning";
-            this.deposit.UseVisualStyleBackColor = true;
-            this.deposit.Click += new System.EventHandler(this.deposit_Click);
+            this.tbxBelopp.Location = new System.Drawing.Point(52, 30);
+            this.tbxBelopp.Name = "tbxBelopp";
+            this.tbxBelopp.Size = new System.Drawing.Size(167, 20);
+            this.tbxBelopp.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Belopp";
             // 
             // withdraw
             // 
@@ -80,55 +86,62 @@
             this.withdraw.UseVisualStyleBackColor = true;
             this.withdraw.Click += new System.EventHandler(this.withdraw_Click);
             // 
-            // label1
+            // deposit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Belopp";
+            this.deposit.Location = new System.Drawing.Point(144, 181);
+            this.deposit.Name = "deposit";
+            this.deposit.Size = new System.Drawing.Size(75, 23);
+            this.deposit.TabIndex = 0;
+            this.deposit.Text = "Insättning";
+            this.deposit.UseVisualStyleBackColor = true;
+            this.deposit.Click += new System.EventHandler(this.deposit_Click);
             // 
-            // tbxBelopp
+            // gbxÖppnaKonto
             // 
-            this.tbxBelopp.Location = new System.Drawing.Point(52, 30);
-            this.tbxBelopp.Name = "tbxBelopp";
-            this.tbxBelopp.Size = new System.Drawing.Size(167, 20);
-            this.tbxBelopp.TabIndex = 3;
+            this.gbxÖppnaKonto.Controls.Add(this.register);
+            this.gbxÖppnaKonto.Controls.Add(this.tbxKredit);
+            this.gbxÖppnaKonto.Controls.Add(this.tbxRänta);
+            this.gbxÖppnaKonto.Controls.Add(this.tbxPersonNr);
+            this.gbxÖppnaKonto.Controls.Add(this.label4);
+            this.gbxÖppnaKonto.Controls.Add(this.label3);
+            this.gbxÖppnaKonto.Controls.Add(this.label2);
+            this.gbxÖppnaKonto.Location = new System.Drawing.Point(245, 12);
+            this.gbxÖppnaKonto.Name = "gbxÖppnaKonto";
+            this.gbxÖppnaKonto.Size = new System.Drawing.Size(239, 247);
+            this.gbxÖppnaKonto.TabIndex = 4;
+            this.gbxÖppnaKonto.TabStop = false;
+            this.gbxÖppnaKonto.Text = "Öppna konto";
             // 
-            // groupBox2
+            // register
             // 
-            this.groupBox2.Controls.Add(this.register);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(245, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(239, 247);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Öppna konto";
+            this.register.Location = new System.Drawing.Point(100, 210);
+            this.register.Name = "register";
+            this.register.Size = new System.Drawing.Size(133, 23);
+            this.register.TabIndex = 4;
+            this.register.Text = "Registrera";
+            this.register.UseVisualStyleBackColor = true;
+            this.register.Click += new System.EventHandler(this.register_Click);
             // 
-            // label2
+            // tbxKredit
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "PersonNr";
+            this.tbxKredit.Location = new System.Drawing.Point(63, 79);
+            this.tbxKredit.Name = "tbxKredit";
+            this.tbxKredit.Size = new System.Drawing.Size(170, 20);
+            this.tbxKredit.TabIndex = 5;
             // 
-            // label3
+            // tbxRänta
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Räntesats";
+            this.tbxRänta.Location = new System.Drawing.Point(63, 53);
+            this.tbxRänta.Name = "tbxRänta";
+            this.tbxRänta.Size = new System.Drawing.Size(170, 20);
+            this.tbxRänta.TabIndex = 4;
+            // 
+            // tbxPersonNr
+            // 
+            this.tbxPersonNr.Location = new System.Drawing.Point(63, 30);
+            this.tbxPersonNr.Name = "tbxPersonNr";
+            this.tbxPersonNr.Size = new System.Drawing.Size(170, 20);
+            this.tbxPersonNr.TabIndex = 3;
             // 
             // label4
             // 
@@ -139,35 +152,23 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Kredit";
             // 
-            // textBox2
+            // label3
             // 
-            this.textBox2.Location = new System.Drawing.Point(63, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 20);
-            this.textBox2.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Räntesats";
             // 
-            // textBox3
+            // label2
             // 
-            this.textBox3.Location = new System.Drawing.Point(63, 53);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(170, 20);
-            this.textBox3.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(63, 79);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(170, 20);
-            this.textBox4.TabIndex = 5;
-            // 
-            // register
-            // 
-            this.register.Location = new System.Drawing.Point(100, 210);
-            this.register.Name = "register";
-            this.register.Size = new System.Drawing.Size(133, 23);
-            this.register.TabIndex = 4;
-            this.register.Text = "Registrera";
-            this.register.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "PersonNr";
             // 
             // update
             // 
@@ -177,6 +178,7 @@
             this.update.TabIndex = 6;
             this.update.Text = "Uppdatera med årsränta";
             this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // lbxKonton
             // 
@@ -193,14 +195,14 @@
             this.ClientSize = new System.Drawing.Size(739, 271);
             this.Controls.Add(this.lbxKonton);
             this.Controls.Add(this.update);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbxÖppnaKonto);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbxÖppnaKonto.ResumeLayout(false);
+            this.gbxÖppnaKonto.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -212,11 +214,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button withdraw;
         private System.Windows.Forms.Button deposit;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbxÖppnaKonto;
         private System.Windows.Forms.Button register;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbxKredit;
+        private System.Windows.Forms.TextBox tbxRänta;
+        private System.Windows.Forms.TextBox tbxPersonNr;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
