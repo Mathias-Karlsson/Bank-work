@@ -19,12 +19,20 @@ namespace Bank_work
             InitializeComponent();
         }
 
+        /// <summary>
+        /// UppdateraKontoLista är en kommand som uppdateras på varje button press och uppdaterar lbxKonton
+        /// </summary>
         private void UppdateraKontoLista()
         {
             lbxKonton.Items.Clear();
             foreach (BankKonto konto in bank.Konton) lbxKonton.Items.Add(konto);
         }
 
+        /// <summary>
+        /// Deposit button lägger in hur mycket i konton som du har valt och plusar ihop med vad det har just nu med det nya
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deposit_Click(object sender, EventArgs e)
         {
             if (lbxKonton.SelectedItem != null)
@@ -40,6 +48,11 @@ namespace Bank_work
             }
         }
 
+        /// <summary>
+        /// Withdraw button tar ut ett viss antal från konton som du har valt men kan inte går mindre än 0
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void withdraw_Click(object sender, EventArgs e)
         {
             if (lbxKonton.SelectedItem != null)
@@ -61,6 +74,11 @@ namespace Bank_work
 
         }
 
+        /// <summary>
+        /// Register button lägger in personNr, ränteSats och kredit i lbxKonton som Sparkonto eller Lånekonto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void register_Click(object sender, EventArgs e)
         {
             double ränteSats;
@@ -88,6 +106,11 @@ namespace Bank_work
                 if (kontroll is TextBox) (kontroll as TextBox).Clear();
         }
 
+        /// <summary>
+        /// Update button uppdaterar listan i lbxKonton med vad soms finns i listan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void update_Click(object sender, EventArgs e)
         {
             foreach (BankKonto konto in bank.Konton)
